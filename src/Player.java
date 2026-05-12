@@ -2,6 +2,7 @@ public class Player {
         String name;
         Card[] hand;
         int cardCount;
+        int sumCard;
 
         public Player(String pname) {
             name = pname;
@@ -15,10 +16,20 @@ public class Player {
         }
 
         public void printHand() {
-            System.out.println(name + "'s Hand:");
+            System.out.println(name + "'s Hand: "+sumCard);
             for (int i = 0; i < cardCount; i++) {
-                System.out.println(hand[i]);
+                hand[i].printCard();
             }
+
             System.out.println();
         }
+        public int getSumCard() {
+            int sum = 0;
+            for(int x = 0; x<cardCount; x++){
+               sum = sum + hand[x].value;
+            }
+            sumCard = sum;
+            return sumCard;
+        }
+
 }
