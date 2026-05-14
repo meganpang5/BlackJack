@@ -4,6 +4,7 @@ public class Player {
         int cardCount;
         int sumCard;
 
+
         public Player(String pname) {
             name = pname;
             hand = new Card[11];
@@ -31,5 +32,6 @@ public class Player {
             sumCard = sum;
             return sumCard;
         }
+
 
 }
